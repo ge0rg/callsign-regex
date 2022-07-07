@@ -108,12 +108,12 @@ def load_xls(fn):
     regex = re.compile(regex_str)
     write_utf8_file('callsigns.regex', regex_str + '\n')
     # store prefix map
-    write_utf8_file('prefixes.dense.json', json.dumps(prefixes))
-    write_utf8_file('prefixes.pretty.json', json.dumps(prefixes, indent=4))
+    write_utf8_file('prefixes.dense.json', json.dumps(prefixes, ensure_ascii=False))
+    write_utf8_file('prefixes.pretty.json', json.dumps(prefixes, indent=4, ensure_ascii=False))
     # convert sets to lists for JSON export and export per-country prefix lists
     countries = {key: sorted(list(val)) for key, val in countries.items()}
-    write_utf8_file('countries.dense.json', json.dumps(countries))
-    write_utf8_file('countries.pretty.json', json.dumps(countries, indent=4))
+    write_utf8_file('countries.dense.json', json.dumps(countries, ensure_ascii=False))
+    write_utf8_file('countries.pretty.json', json.dumps(countries, indent=4, ensure_ascii=False))
     return regex, prefixes
 
 
