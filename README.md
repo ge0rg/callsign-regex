@@ -7,9 +7,25 @@ in Excel format and generate the following outputs:
 - [a map of prefixes to country data](generated/prefixes.pretty.json) ([dense version](generated/prefixes.dense.json))
 - [a map of countries to prefixes](generated/countries.pretty.json) ([dense version](generated/countries.dense.json))
 
+Example invocation:
+
+```
+$ ./callsign_regex.py CallSignSeriesRanges.xlsx DO1GL W100AW D3ADBEEF
+DO1GL - Germany (Federal Republic of)
+W100AW - United States of America
+D3ADBEEF does not match
+```
+
+# Dependencies
+
+- Python 3
+- [OpenPyXL](https://openpyxl.readthedocs.io/en/stable/)
+
+
 # Sources
 
 This is based on the [callsign format description on Wikipedia](https://en.wikipedia.org/wiki/Amateur_radio_call_signs)
+and on a [very helpful answer on Ham Radio Stack Exchange](https://ham.stackexchange.com/a/1360/89).
 
 # Limitations
 
